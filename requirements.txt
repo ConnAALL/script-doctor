@@ -1,6 +1,6 @@
 
 beautifulsoup4==4.13.5
-chex==0.1.90
+chex>=0.1.90
 einops==0.8.1
 flask==3.1.2
 flax==0.11.2
