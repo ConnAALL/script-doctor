@@ -2,14 +2,14 @@ import math
 from timeit import default_timer as timer
 from typing import Sequence, Tuple
 
-from categorical import Categorical
 from flax.linen.initializers import constant, orthogonal
 import numpy as np
 import flax.linen as nn
 import jax
 import jax.numpy as jnp
 
-from env import PSObs
+from puzzlejax.env import PSObs
+from puzzlejax.categorical import Categorical
 
 def crop_rf(x, rf_size):
     mid_x = x.shape[1] // 2

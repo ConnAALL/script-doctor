@@ -13,7 +13,7 @@ from puzzlejax.env import PSEnv
 # from eval import get_eval_name, init_config_for_eval
 from purejaxrl.wrappers import LogWrapper
 from train import init_checkpointer
-from puzzlejax.utils_rl import get_env_params_from_config, get_exp_dir, init_network, init_ps_env, init_config
+from utils_rl import get_env_params_from_config, get_exp_dir, init_network, init_ps_env, init_config
 
 
 @hydra.main(version_base="1.3", config_path='./conf', config_name='enjoy_config')

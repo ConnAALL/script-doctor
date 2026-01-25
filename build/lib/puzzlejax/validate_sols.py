@@ -29,7 +29,7 @@ from puzzlejax.preprocess_games import PS_LARK_GRAMMAR_PATH, TREES_DIR, DATA_DIR
 from standalone.utils import replay_actions_js
 from standalone.utils import compile_game as compile_game_js
 from puzzlejax.utils import get_list_of_games_for_testing, to_binary_vectors
-from puzzlejax.utils_rl import get_env_params_from_config
+from utils_rl import get_env_params_from_config
 
 
 scratch_dir = 'scratch'

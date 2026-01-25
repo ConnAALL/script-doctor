@@ -18,10 +18,10 @@ from lark import Lark, Transformer, Tree, Token, Visitor
 import numpy as np
 
 from conf.config import PreprocessConfig
-from env import PSEnv
-from gen_tree import GenPSTree
-from globals import GAMES_N_RULES_SORTED_PATH, GAMES_TO_N_RULES_PATH, GAMES_TO_SKIP, GAMES_N_LEVELS_PATH
-from ps_game import PSGameTree
+from puzzlejax.env import PSEnv
+from puzzlejax.gen_tree import GenPSTree
+from puzzlejax.globals import GAMES_N_RULES_SORTED_PATH, GAMES_TO_N_RULES_PATH, GAMES_TO_SKIP, GAMES_N_LEVELS_PATH
+from puzzlejax.ps_game import PSGameTree
 
 logger = logging.getLogger(__name__)
 
@@ -656,7 +656,9 @@ def gen_error_str(e):
 @hydra.main(version_base="1.3", config_path="conf", config_name="preprocess_config")
 def main(cfg: PreprocessConfig):
 
-    with open(PS_LARK_GRAMMAR_PATH, "r", encoding='utf-8') as file:
+    this_dir = os.path.dirname(__file__)
+    file_path = os.path.join(this_dir, PS_LARK_GRAMMAR_PATH)
+    with open(file_path, "r", encoding='utf-8') as file:
         puzzlescript_grammar = file.read()
 
     # Initialize the Lark parser with the PuzzleScript grammar
